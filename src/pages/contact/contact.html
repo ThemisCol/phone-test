@@ -1,0 +1,35 @@
+<ion-header translucent="true">
+  <ion-navbar>
+    <ion-title>
+      Información
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col>
+        <h2>Prueba de Concepto ERO</h2>
+        <p>
+          Se realiza una prueba de concepto para ERO_PA02062_APP  Almacenamiento de información sensible en base de datos local del dispositivo móvil.
+        </p>
+        <p>
+          Esta prueba de concepto se está llevando a cabo en el sprint 118.
+        </p>
+      </ion-col>
+    </ion-row>
+    <br><br>
+    <ion-row>
+      <ion-col>
+        <p>ID único del dispositivo: </p>
+      </ion-col>
+      <ion-col *ngIf="uid && uid !== ''">
+        {{uid}}
+      </ion-col>
+      <ion-col *ngIf="!uid || uid === ''">
+        UID no disponible
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Consultar BD
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="logs.length > 0">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col col-3><strong>Llave</strong></ion-col>
+        <ion-col col-7><strong>Valor</strong></ion-col>
+        <ion-col col-2><strong>Ver</strong></ion-col>
+      </ion-row>
+    </ion-grid>
+    <div *ngFor="let item of logs">
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col col-3>
+            <p>{{item.key}}</p>
+          </ion-col>
+          <ion-col col-7>
+            <p>{{item.value}}:</p>
+          </ion-col>
+          <ion-col col-2>
+            <button ion-button color='primary' (click)="seeData(item)">
+              <ion-icon name="eye"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <hr>
+    </div>
+    <div>
+      <button ion-button (click)="removeData()" color='danger' block>
+        Borrar storage
+      </button>
+    </div>
+  </div>
+  <div *ngIf="logs.length === 0">
+    <h5>No hay registros en la Base de datos local</h5>
+  </div>
+</ion-content>
